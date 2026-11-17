@@ -4,6 +4,8 @@ import matplotlib.pyplot as plt
 import seaborn
 import plotly
 import nbformat
+import os
+os.makedirs("images", exist_ok=True)
 df = pd.read_csv('student_career_success_dataset.csv')
 
 Salary = "Starting_Salary_USD"
@@ -62,6 +64,7 @@ for bar in bars:
 plt.title("Кількість жінок та чоловіків у вибірці", fontsize=13, pad=15)
 plt.ylabel("Кількість")
 plt.tight_layout()
+plt.savefig("images/gender_distribution1.png", dpi=300, bbox_inches="tight")
 plt.show()
 
 
@@ -130,6 +133,7 @@ plt.ylabel("Спеціальність")
 plt.tight_layout()
 manager = plt.get_current_fig_manager()
 manager.window.state("zoomed")
+plt.savefig("images/gender_distribution2.png", dpi=300, bbox_inches="tight")
 plt.show()
 
 
@@ -145,6 +149,7 @@ plt.grid(True, linestyle="--", alpha=0.4)
 plt.tight_layout()
 manager = plt.get_current_fig_manager()
 manager.window.state("zoomed")
+plt.savefig("images/salary_scatter.png", dpi=300, bbox_inches="tight")
 plt.show()
 
 
@@ -184,4 +189,5 @@ plt.grid(axis="y", linestyle="--", alpha=0.5)
 plt.tight_layout()
 manager = plt.get_current_fig_manager()
 manager.window.state("zoomed")
+plt.savefig("images/salary_boxplot.png", dpi=300, bbox_inches="tight")
 plt.show()
